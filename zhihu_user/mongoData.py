@@ -9,8 +9,8 @@ class MongoData:
     PORT = 27017
 
     def __init__(self):
-        conn = MongoClient(self.HOST, self.PORT)
-        db = conn.mydb
+        self.conn = MongoClient(self.HOST, self.PORT)
+        db = self.conn.mydb
         self.my_set = db.zhihu_userinfo
 
     def insertData(self, mylist):
@@ -19,5 +19,8 @@ class MongoData:
     def loadData(self):
         return self.my_set.find()
 
+    def close(self):
+        if self.conn is not None:
+            self.conn.close()
 
 

@@ -30,6 +30,9 @@ ITEM_PIPELINES = {
     'zhihu_user.pipelines.ZhihuUserPipeline' : 300,
 }
 
+MONGO_URI = '127.0.0.1'
+MONGO_DATABASE = 'mydb'
+
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
